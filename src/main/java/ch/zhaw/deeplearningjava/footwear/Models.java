@@ -60,11 +60,11 @@ public final class Models {
         block.add(Activation.reluBlock());
         block.add(Pool.maxPool2dBlock(new Shape(2, 2), new Shape(2, 2)));
 
-        block.add(Conv2d.builder().setFilters(128).setKernelShape(new Shape(3, 3)).optStride(new Shape(1, 1)).optPadding(new Shape(1, 1)).build());
+        block.add(Conv2d.builder().setFilters(256).setKernelShape(new Shape(3, 3)).optStride(new Shape(1, 1)).optPadding(new Shape(1, 1)).build());
         block.add(Activation.reluBlock());
         block.add(Pool.maxPool2dBlock(new Shape(2, 2), new Shape(2, 2)));
 
-        block.add(Conv2d.builder().setFilters(128).setKernelShape(new Shape(3, 3)).optStride(new Shape(1, 1)).optPadding(new Shape(1, 1)).build());
+        block.add(Conv2d.builder().setFilters(256).setKernelShape(new Shape(3, 3)).optStride(new Shape(1, 1)).optPadding(new Shape(1, 1)).build());
         block.add(Activation.reluBlock());
         block.add(Pool.maxPool2dBlock(new Shape(2, 2), new Shape(2, 2)));
 
