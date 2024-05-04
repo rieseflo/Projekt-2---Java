@@ -6,35 +6,100 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="script.js" async></script>
+    <style>
+        .container {
+            margin-top: 50px;
+            background-color: rgba(12, 51, 79, 0.75); /* Light grey background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        body {
+            color: white;
+            background-image: url('background.jpg'); /* Background image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+        }
+
+        h1 {
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+        label {
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control-file {
+            border: 1px solid #ced4da; /* Light grey border */
+            border-radius: 5px;
+        }
+
+        #answerPart {
+            margin-top: 20px;
+        }
+
+        .alert {
+            border-radius: 5px;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1; /* Light blue alert background */
+            color: rgba(12, 51, 79, 0.75); /* Dark blue alert text */
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+
+        #preview {
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <h1>Footwear Classification</h1>
-        <p>DeepJavaLibrary (DJL) Demonstration by mosa</p>
+    <div class="container">
+        <h1 class="text-center">Gemstone Classification</h1>
+        <p class="text-center">DeepJavaLibrary (DJL) Demonstration by rieseflo</p>
 
         <form>
             <div class="form-group">
-                <label for="exampleFormControlFile1">Bitte Bild hochladen (jpeg, png)</label>
+                <label for="image">Bitte Bild hochladen (jpeg, png)</label>
                 <input type="file" accept="image/png, image/jpeg" class="form-control-file" id="image" name="image"
                     onchange="checkFiles(this.files);">
             </div>
         </form>
 
         <div id="answerPart" style="visibility: hidden;">
-            <p><b>Answer:</b>
-            <div id="answer"></div>
-            </p>
+            <div class="alert alert-info" role="alert">
+                <b>Answer:</b>
+                <div id="answer"></div>
+            </div>
 
-            <p id="previewPart"><b>Analyzed Image:</b>
-            <p><img id="preview" width="300" src="#" alt="preview" /></p>
-            </p>
+            <div id="previewPart">
+                <p class="font-weight-bold">Analyzed Image:</p>
+                <img id="preview" class="img-fluid" src="#" alt="preview" />
+            </div>
         </div>
     </div>
 
-
+    <script src="script.js" async></script>
 </body>
 
 </html>

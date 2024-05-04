@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Install
-RUN ./mvnw -Dmaven.test.skip=true package
+RUN ./mvn -Dmaven.test.skip=true package
 
 # Docker Run Command
 EXPOSE 8080

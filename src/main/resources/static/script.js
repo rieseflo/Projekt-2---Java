@@ -35,14 +35,44 @@ function checkFiles(files) {
         response => {
             console.log(response)
             response.text().then(function (text) {
-                answer.innerHTML = text;
+                // Parse the JSON string into a JavaScript object
+                const result = JSON.parse(text);
+
+                // Clear the previous content of the answer div
+                answer.innerHTML = "";
+
+                // Create a new table element
+                const table = document.createElement('table');
+                table.classList.add('table', 'table-bordered', 'table-striped'); // Adding Bootstrap classes for styling
+
+                // Create table header row
+                const headerRow = table.insertRow();
+                const classNameHeader = headerRow.insertCell();
+                classNameHeader.textContent = 'Class Name';
+                classNameHeader.classList.add('font-weight-bold'); // Add custom class for bold font
+                const probabilityHeader = headerRow.insertCell();
+                probabilityHeader.textContent = 'Probability';
+                probabilityHeader.classList.add('font-weight-bold'); // Add custom class for bold font
+
+                // Iterate over the result array and populate the table rows
+                result.forEach(item => {
+                    const row = table.insertRow();
+                    const classNameCell = row.insertCell();
+                    classNameCell.textContent = item.className;
+                    const probabilityCell = row.insertCell();
+
+                    // Format probability as percentage
+                    const probabilityPercent = (item.probability * 100).toFixed(1) + '%';
+                    probabilityCell.textContent = probabilityPercent;
+                });
+
+                // Append the table to the answer div
+                answer.appendChild(table);
             });
-
         }
-    ).then(
-        success => console.log(success)
-    ).catch(
-        error => console.log(error)
-    );
-
-}
+        ).then(
+            success => console.log(success)
+        ).catch(
+            error => console.log(error)
+        );
+    }
