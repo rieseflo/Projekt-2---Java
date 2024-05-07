@@ -34,6 +34,6 @@ The application will be accessible at http://localhost:8080.
 
 ### Used Data
 
-The used dataset is accessible on Kaggle https://www.kaggle.com/datasets/fransell/gemstones-images-expanded.
+The used dataset is accessible on Kaggle at https://www.kaggle.com/datasets/fransell/gemstones-images-expanded.
 
 
